@@ -61,6 +61,7 @@ def pedestrian_movement_analysis():
 def main():
     age_analysis()
     time_analysis()
+    pedestrian_movement_analysis()
 
 
 if __name__ == "__main__":
