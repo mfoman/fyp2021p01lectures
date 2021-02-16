@@ -92,7 +92,7 @@ def Bradford2019():
     
 
 def main():
-    Bradford2019()
+    #Bradford2019()
 
 
 if __name__ == "__main__":
