@@ -34,7 +34,7 @@ Light_dict = {}
 for light in light_key:
     Light_dict[light[0]] = Accidents_Casualties[Accidents_Casualties["Light_Conditions"] == light[1]]
 
-#Statistical analysis on the median ages of the male/female casualties. (Accident-variable/Casualty-variable analysis)
+#Statistical analysis on the median ages depending on the light conditions of the accidents. (Accident-variable/Casualty-variable analysis)
 Age_Light_dict = {}
 for light in Light_dict:
     df = Light_dict[light]
