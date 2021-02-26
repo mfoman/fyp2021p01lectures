@@ -40,10 +40,33 @@ def Accident_Light_Casualty_Sex():
         df = Light_dict[light]
         Age_Light_dict["Age_"+light] = df["Age_of_Casualty"].describe().loc["50%"]
 
+import numpy as np
+import scipy.stats as stats
+from scipy.stats import chi2_contingency
+
+def Analysis():
+    mask = (Accidents_Casualties["Speed_limit"] != -1)
+    severity_speed = np.array([Accidents_Casualties["Speed_limit"][mask], Accidents_Casualties["Accident_Severity"][mask]]).T
+    
+    severity_speed_pd = pd.crosstab(severity_speed[:, 0], severity_speed[:, 1], rownames = ["Speed limit"], colnames = ["Accident Severity"]) 
+    severity_speed = severity_speed_pd.to_numpy()
+    
+    chiVal, pVal, df, expected = chi2_contingency(severity_speed)
+    print(chiVal)
+    print(pVal)
+    print(df)
+    print(expected)
+    
+    rowTotals = severity_speed.sum(axis = 1)
+    N = rowTotals.sum()
+    V = np.sqrt((chiVal/N) / (min(severity_speed.shape)-1))
+    print(V)
+
 
 def main():
     #Casualty_Age_Casualty_Sex()
     #Accident_Light_Casualty_Sex()
+    #Analysis()
 
 
 if __name__ == "__main__":
