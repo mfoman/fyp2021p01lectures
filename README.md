@@ -65,16 +65,3 @@ First update the pip package in the venv:
 `pip install -r requirements.txt`
 
 DONE! You can proceed to use the virtual environment in the console or in your notebook editor.
-
-
-## Contributors
-
-Constantin-Bogdan Cräciun \<cocr@itu.dk\>
-
-Daniel Hansen \<darh@itu.dk\>
-
-Joao Silva \<joap@itu.dk\>
-
-Thorvald Sørensen \<thso@itu.dk\>
-
-Frederik Raisa \<frai@itu.dk\>
